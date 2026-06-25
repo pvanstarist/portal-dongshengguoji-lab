@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>东升国际 · 服务与信息介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fff2e6 0%, #fce6d4 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1.5rem;
+            line-height: 1.6;
+            color: #2e261d;
+        }
+
+        .page {
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        /* hero 区 */
+        .hero {
+            background: linear-gradient(135deg, #f6e3d0, #f9dcc6);
+            border-radius: 42px 42px 42px 42px / 28px 28px 28px 28px;
+            padding: 3rem 2.5rem 2.8rem;
+            margin-bottom: 2.8rem;
+            box-shadow: 0 18px 30px -12px rgba(120, 70, 30, 0.15);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #3f2a1b;
+            margin-bottom: 0.7rem;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #5c4332;
+            max-width: 660px;
+            margin: 0 auto 1.2rem;
+        }
+
+        .hero .tagline {
+            display: inline-block;
+            background: rgba(255, 255, 240, 0.7);
+            backdrop-filter: blur(2px);
+            padding: 0.5rem 1.8rem;
+            border-radius: 60px;
+            font-size: 0.95rem;
+            color: #4d3628;
+            border: 1px solid #e8cdb5;
+        }
+
+        /* 白色内容卡片 */
+        .card {
+            background: #fffffffa;
+            backdrop-filter: blur(2px);
+            border-radius: 30px;
+            padding: 2.2rem 2.2rem;
+            box-shadow: 0 8px 20px -6px rgba(80, 50, 30, 0.08);
+            margin-bottom: 2.2rem;
+            transition: box-shadow 0.15s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 12px 28px -10px rgba(100, 60, 30, 0.12);
+        }
+
+        .card h2 {
+            font-size: 1.6rem;
+            font-weight: 460;
+            border-left: 5px solid #dba885;
+            padding-left: 1rem;
+            margin-bottom: 1.3rem;
+            color: #3d2c1f;
+        }
+
+        .card p {
+            margin-bottom: 1rem;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .flex-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin: 1.2rem 0 0.4rem;
+        }
+
+        .flex-item {
+            background: #fdf6ef;
+            flex: 1 1 200px;
+            min-width: 160px;
+            border-radius: 24px;
+            padding: 1.4rem 1.2rem;
+            border: 1px solid #edd6c3;
+        }
+
+        .flex-item .num {
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: #a8775b;
+            margin-bottom: 0.2rem;
+        }
+
+        .flex-item h3 {
+            font-weight: 480;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: #3d2b1e;
+        }
+
+        .flex-item span {
+            color: #5e4433;
+            font-size: 0.95rem;
+        }
+
+        .faq-short {
+            background: #f8ede2;
+            border-radius: 26px;
+            padding: 1.8rem 2rem;
+            margin: 1rem 0 0.6rem;
+        }
+
+        .faq-short details {
+            margin-bottom: 0.9rem;
+            border-bottom: 1px dashed #ddc2ae;
+            padding-bottom: 0.6rem;
+        }
+
+        .faq-short details:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-short summary {
+            font-weight: 480;
+            cursor: pointer;
+            color: #3d2a1d;
+            padding: 0.15rem 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .faq-short summary::before {
+            content: "▸";
+            display: inline-block;
+            margin-right: 0.6rem;
+            color: #a8775b;
+            transition: transform 0.2s;
+        }
+
+        .faq-short details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .faq-short .faq-answer {
+            padding: 0.6rem 0 0.2rem 1.4rem;
+            color: #4f392b;
+        }
+
+        .link-block {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .link-block .inline-link {
+            background: #f0dccc;
+            color: #34251b;
+            text-decoration: none;
+            padding: 0.4rem 1.8rem;
+            border-radius: 80px;
+            font-weight: 450;
+            display: inline-block;
+            border: 1px solid #dbbc9f;
+            transition: background 0.2s, transform 0.1s;
+            font-size: 1rem;
+        }
+
+        .link-block .inline-link:hover {
+            background: #e6cfb5;
+            transform: scale(1.02);
+        }
+
+        .bottom-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.8rem 2.5rem;
+            margin: 0.8rem 0 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .bottom-links a {
+            color: #4d3526;
+            text-decoration: none;
+            border-bottom: 1px solid #d1b69e;
+            padding-bottom: 2px;
+        }
+
+        .bottom-links a:hover {
+            border-bottom-color: #7e5f48;
+        }
+
+        .footer-note {
+            margin-top: 2.2rem;
+            font-size: 0.85rem;
+            color: #655140;
+            text-align: center;
+            border-top: 1px solid #e4cebc;
+            padding-top: 1.5rem;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1.2rem 1rem;
+            }
+
+            .hero {
+                padding: 2rem 1.2rem 1.8rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .card {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .flex-item {
+                min-width: 130px;
+                flex: 1 1 130px;
+            }
+
+            .faq-short {
+                padding: 1.2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero 区 -->
+    <header class="hero">
+        <h1>东升国际 · 服务与信息</h1>
+        <p class="sub">
+            了解这个平台的基本面貌、定位与常见疑问，让每一次访问都更清晰。
+        </p>
+        <div class="tagline">从站点介绍出发 · 可信与实用</div>
+    </header>
+
+    <!-- 优势区 + 说明区 混合卡片 -->
+    <div class="card">
+        <h2>为什么选择这里</h2>
+        <p>对于许多访问者来说，第一印象来自信息的清晰和可靠。<strong>东升国际</strong> 在搭建时着重突出了几个特点：页面结构直观、内容更新有规律、以及面向不同需求的用户都保留了必要的指引。下面几个方面是多数人留意到的优势。</p>
+        <div class="flex-grid">
+            <div class="flex-item">
+                <div class="num">01</div>
+                <h3>信息结构</h3>
+                <span>栏目划分明确，主要功能入口好找，不用来回翻。</span>
+            </div>
+            <div class="flex-item">
+                <div class="num">02</div>
+                <h3>内容呈现</h3>
+                <span>描述与说明偏生活化，没有太多生僻术语，读起来轻松。</span>
+            </div>
+            <div class="flex-item">
+                <div class="num">03</div>
+                <h3>访问体验</h3>
+                <span>页面加载速度不错，在手机和电脑上都保持一致的观感。</span>
+            </div>
+        </div>
+        <p style="margin-top:0.8rem;">当然，每个站点的实际感受因人而异。如果你恰好需要了解相关服务或信息，不妨花几分钟亲自看看布局和内容。</p>
+    </div>
+
+    <!-- 从站点介绍与可信说明的角度 -->
+    <div class="card">
+        <h2>站点说明 · 可信与实用</h2>
+        <p><a href="https://portal-dongshengguoji.com" style="color:#3d2a1d;text-decoration: underline;text-underline-offset:3px;font-weight:460;">东升国际</a> 这个站点主要提供面向特定用户群体的信息聚合与功能引导。从公开的页面看，它没有过度承诺，而是把重点放在基础说明和必要指引上。</p>
+        <p>作为一个线上信息节点，其可信度体现在几个细节：内容没有夸张标题，链接指向明确，联系方式或相关说明都放在显眼位置。另外，站点保持了一定的更新频率，而不是长期停滞。</p>
+        <p>在日常生活里，我们常会遇到各类网站，有的花哨但空洞，有的简单但实在。从目前观察来看，<strong>东升国际</strong> 属于后者——不堆砌词汇，每个板块都有实际用途。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="card">
+        <h2>常见疑问摘要</h2>
+        <div class="faq-short">
+            <details>
+                <summary>这个站点主要面向谁？</summary>
+                <div class="faq-answer">主要面向对相关信息有了解需求的人，比如想查基础服务说明、功能入口或常见流程的用户。整体内容偏实用，没有特定身份限制。</div>
+            </details>
+            <details>
+                <summary>页面里的链接都安全吗？</summary>
+                <div class="faq-answer">目前可见的所有链接都指向站点自身或相关说明页面，没有外部跳转风险。当然，浏览时仍建议留意网址栏，确保在站内。</div>
+            </details>
+            <details>
+                <summary>信息多久更新一次？</summary>
+                <div class="faq-answer>更新节奏不固定，但核心板块会随着需求变化做调整。如果你发现某些内容过时，也可以留意站点是否有最新公告。</div>
+            </details>
+            <details>
+                <summary>需要注册或登录吗？</summary>
+                <div class="faq-answer">浏览公开信息不需要注册。部分功能（如果有）可能会要求身份验证，页面会有明确提示。</div>
+            </details>
+        </div>
+        <p style="margin-top:0.6rem;font-size:0.95rem;">还有别的疑问？可以看看站点内是否有更详细的帮助版块。</p>
+    </div>
+
+    <!-- 底部链接区域 -->
+    <div class="card" style="padding-bottom:1.6rem;">
+        <div class="link-block">
+            <span style="display:block; margin-bottom:0.8rem; font-size:0.95rem;">想直接访问主页？</span>
+            <a href="https://portal-dongshengguoji.com" class="inline-link">东升国际</a>
+            <div style="margin-top:0.6rem;font-size:0.9rem;color:#5e4433;">—— 一个清晰、直接的信息站点。</div>
+        </div>
+        <div class="bottom-links">
+            <a href="https://portal-dongshengguoji.com">东升国际</a>
+            <a href="https://portal-dongshengguoji.com">东升国际</a>
+            <a href="https://portal-dongshengguoji.com">东升国际</a>
+            <a href="https://portal-dongshengguoji.com">东升国际</a>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer-note">
+        © 东升国际 · 介绍页 &mdash; 基于公开信息整理，内容仅供参考。
+    </div>
+</div>
+</body>
+</html>
